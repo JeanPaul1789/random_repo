@@ -1,7 +1,7 @@
 #!/bin/bash
 
-authid=" 1de7cf7ee29750d60967"
-authsecret="797930636167fb9cbfa36d566cd69ce909d92f09"
+authid=""
+authsecret=""
 
 url=$(curl -s -u $authid:$authsecret "https://api.github.com/users?since=$(shuf -i 1-100000000 -n 1)&per_page=100" | jq ".[$(shuf -i 1-100 -n 1)].repos_url")
 url=$(echo $url | tr -d \")
