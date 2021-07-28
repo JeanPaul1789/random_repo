@@ -26,7 +26,7 @@ authsecret="yoursecret"
     ```
   - Fedora and other dnf:
     ```bash
-    $sudo dnf install
+    $sudo dnf install jq
     ```
   - Arch and other pacman/yay:
     ```bash
