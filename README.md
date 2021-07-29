@@ -3,9 +3,10 @@
 [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com)
 
 ### How to use it ?
-- First you need to create an oauth app [here](https://github.com/settings/developers)
+- First you need to create an oauth app [here](https://github.com/settings/developers) and a discord webhook
   ![Create app](images/new.png)
   ![Create app](images/new2.png)
+  ![create Webhook](https://assets.digitalocean.com/articles/discord_website_status/step1c.png)
 - When you did it open the script **random_repo.sh** and put in `oauthid` your oauth id and `oauthsecret` your oauth app scret
   ![Get id](images/get_id.jpg)
 
@@ -15,8 +16,17 @@ it should look like this
 
 authid="yourid"
 authsecret="yoursecret"
+webhook_url="your discord webhook url"
 
 ...
+```
+
+If you want a random repository every hour do this:
+
+```bash
+$ crontab -e
+
+0 * * * * path_to_the_script/random_repo.sh >> .repo_log.txt
 ```
 
 - Now you need to install dependencies: 
@@ -46,5 +56,3 @@ Now just launch the script and voila !
 
 Why did I did this script ? and why in bash and not other language ?
 I don't know a damn thing about it, but leave me in my madness
-
-Next step it's to connect it to a discord webhook so every hour he send you an random repository
